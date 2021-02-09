@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <title>Space Station Tracker</title>
+  </head>
+  <body>
+    <div class="home">
+      <div class="homeCard">
+        
+        <div class="homeTitle">
+          
+          <h1>Welcome in Space Station Tracker</h1>
+          <p>This app allows you to see Space Station in real time!</br>
+            Please enter your name to access!
+          </p>
+          <img class="astronaut"
+            srcset="
+            https://images.vexels.com/media/users/3/152639/isolated/preview/506b575739e90613428cdb399175e2c8-space-astronaut-cartoon-by-vexels.png
+            "
+            alt="Space"
+          />
+        </div>
+        <form class="homeForm">
+          <input type="text" value="" id="name" name="name" minlength="3" placeholder="Your Name" />
+          <button class="btnEnter">Enter</button>
+        </form>
+
+
+
+      </div>
+    </div>
+    <div class="wrappedApp">
+      <h1>Welcome <span class="nameTitle"></span>, we are in Space Station Tracker</h1>
+
+      <div class="wrapperMap">
+        <div class="mapid" id="mapid" style="height: 70%; width: 70%"></div>
+        <div class="wrapStats">
+          <button class="btnShow">Show Stats</button>
+          <div class="stats"></div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js" defer></script>
+  </body>
+</html>
