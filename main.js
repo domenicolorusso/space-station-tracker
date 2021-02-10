@@ -94,11 +94,6 @@ function hideModalStats() {
 }
 
 function selectWhichEvent() {
-  if (btn.textContent === "Show Stats") {
-    return showModalStats();
-  }
-  if (btn.textContent === "Hide Stats") {
-    return hideModalStats();
-  }
+  btn.textContent === "Show Stats" ? showModalStats() : hideModalStats()
 }
 btn.addEventListener("click", selectWhichEvent);
