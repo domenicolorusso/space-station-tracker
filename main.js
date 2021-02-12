@@ -1,8 +1,3 @@
-// "latitude": 37.661436709803,
-// "longitude": -97.48964333794,
-// "altitude": 421.92319174882,
-// "velocity": 27588.816616,
-
 const form = document.querySelector(".homeForm");
 const home = document.querySelector(".home");
 const inputName = document.getElementById("name");
@@ -23,7 +18,7 @@ function handleEnter(e) {
 }
 form.addEventListener("submit", handleEnter);
 
-//DOM ELEMENTS
+
 let stats = document.querySelector(".stats");
 const lat = document.createElement("h3");
 const long = document.createElement("h3");
@@ -34,12 +29,12 @@ stats.appendChild(long);
 stats.appendChild(alt);
 stats.appendChild(vel);
 
-//CONST LINKS
+
 const sateliteURL = "https://api.wheretheiss.at/v1/satellites/25544";
 const iconURL =
   "https://upload.wikimedia.org/wikipedia/commons/7/77/Space_station.svg";
 
-//definisce la mappa e i tiles
+
 let mymap = L.map("mapid").setView([0, 0], 4);
 const attribution =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -47,19 +42,19 @@ const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const tiles = L.tileLayer(tileUrl, { attribution });
 tiles.addTo(mymap);
 
-//imposta icona custom  e la attacca alla mappa
+
 const sateliteIcon = L.icon({
   iconUrl: iconURL,
 });
 const sateliteMarker = L.marker([0, 0], { icon: sateliteIcon }).addTo(mymap);
 
-//prendo coordinate da api
+
 async function getSateliteData(data) {
   const res = await fetch(sateliteURL).catch(() => {
     clearInterval(intID);
     console.log("error in fetching");
   });
-  //attribuisco i valori del json alla posizione della view della mappa e del marker
+
   if (res) {
     data = await res.json();
     const { latitude, longitude, altitude, velocity } = data;
@@ -80,7 +75,7 @@ async function getSateliteData(data) {
 }
 const intID = setInterval(getSateliteData, 1000);
 
-// toggle event button
+
 
 const btn = document.querySelector(".btnShow");
 
